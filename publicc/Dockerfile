@@ -2,4 +2,4 @@
 FROM nginx:alpine
 
 # Copia el contenido de la carpeta public en la ruta que Nginx usa para servir archivos
-COPY public/ /usr/share/nginx/html
+COPY publicc/ /usr/share/nginx/html
