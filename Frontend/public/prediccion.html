@@ -116,7 +116,7 @@
 </head>
 <body>
   <header>
-    <button onclick="location.href='./index.html'" id="btnVolver" aria-label="Volver a página principal">Volver</button>
+    <button id="btnVolver" aria-label="Volver a página principal">Volver</button>
     <h1>Predicción y Preguntas Frecuentes - ESFOT IA</h1>
   </header>
 
@@ -161,19 +161,24 @@
   <script>
     const BACKEND_URL = "https://prediccionia-production.up.railway.app";
 
-    // Botón Volver
+    // Botón Volver optimizado
     document.getElementById('btnVolver').addEventListener('click', () => {
-      window.location.href = "/Frontend/public/index.html"; // Cambia aquí la URL deseada
+      const indexUrl = './index.html';
+      if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ) {
+        // Si ya está en index, recarga la página para refrescar contenido
+        window.location.reload();
+      } else {
+        window.location.href = indexUrl;
+      }
     });
 
     // Consultar pregunta frecuente
     document.getElementById('btnConsultar').addEventListener('click', async () => {
       const select = document.getElementById('preguntasSelect');
-      const pregunta = select.value;
       const respuestaDiv = document.getElementById('respuesta');
       respuestaDiv.textContent = "";
 
-      if (!pregunta) {
+      if (!select.value) {
         respuestaDiv.textContent = "Por favor, selecciona una pregunta.";
         return;
       }
@@ -182,11 +187,11 @@
         const res = await fetch(`${BACKEND_URL}/formulario/pregunta`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ texto: pregunta })
+          body: JSON.stringify({ texto: select.value })
         });
         const data = await res.json();
         respuestaDiv.textContent = data.respuesta || "No hay respuesta disponible.";
-      } catch (error) {
+      } catch {
         respuestaDiv.textContent = "Error al conectar con el servidor.";
       }
     });
@@ -223,7 +228,7 @@
         `;
 
         form.reset();
-      } catch (error) {
+      } catch {
         out.textContent = "Error al enviar el formulario o conectar con el servidor.";
       }
     });
