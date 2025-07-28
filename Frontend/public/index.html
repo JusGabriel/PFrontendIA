@@ -6,7 +6,6 @@
   <title>ESFOT - Escuela de Formación de Tecnólogos</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* --- Aquí va todo el CSS que ya pegaste --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Roboto', sans-serif;
@@ -268,365 +267,443 @@
       width: 320px;
       max-width: 100%;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      position: relative;
-    }
-    .modal-content h3 {
-      margin-bottom: 1rem;
       text-align: center;
+    }
+    .modal-content h2 {
+      margin-bottom: 1rem;
       color: #0f4c81;
     }
-    .modal-content label {
-      display: block;
-      margin-bottom: 0.2rem;
-      font-weight: 600;
-      color: #333;
-    }
-    .modal-content input[type="email"],
-    .modal-content input[type="password"] {
+    .modal-content input {
       width: 100%;
-      padding: 0.6rem 1rem;
-      margin-bottom: 1.2rem;
-      border: 1.8px solid #cbd5e1;
-      border-radius: 6px;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
       font-size: 1rem;
     }
     .modal-content button {
       width: 100%;
+      padding: 0.8rem;
       background-color: #0f4c81;
       color: white;
       font-weight: bold;
-      padding: 0.8rem;
       border: none;
       border-radius: 8px;
+      font-size: 1rem;
       cursor: pointer;
-      font-size: 1.1rem;
       transition: background-color 0.3s ease;
     }
     .modal-content button:hover {
       background-color: #084b6f;
     }
-    .modal-close {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      font-size: 1.5rem;
+    .modal-content .close-btn {
+      background: transparent;
+      border: none;
       color: #0f4c81;
-      cursor: pointer;
       font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
     }
-    .error-msg {
+    #login-error, #register-error {
       color: #d9534f;
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
-      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      min-height: 1.3em;
+    }
+    #register-success {
+      color: green;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      min-height: 1.3em;
+    }
+    #register-link {
+      margin-top: 1rem;
+      display: inline-block;
+      cursor: pointer;
+      color: #0f4c81;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>ESFOT</h1>
-  <nav id="nav-menu">
-    <a href="#" id="login-link">Login</a>
-    <a href="#" id="register-link">Registro</a>
-  </nav>
-</header>
+  <header>
+    <h1>ESFOT - Escuela de Formación de Tecnólogos</h1>
+    <nav>
+      <a href="#" id="login-btn">Iniciar sesión</a>
+      <!-- Aquí se inyecta nombre usuario y botón logout si está logueado -->
+    </nav>
+  </header>
 
-<section class="hero">
-  <h2>Bienvenido a la Escuela de Formación de Tecnólogos</h2>
-  <p>Formamos profesionales innovadores en diversas áreas de tecnología para construir un futuro mejor.</p>
-</section>
+  <section class="hero">
+    <h2>Nuestras Carreras</h2>
+    <p>Conoce nuestras opciones académicas tecnológicas diseñadas para el presente y futuro de la industria.</p>
+  </section>
 
-<section class="grid">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Tecnología y Computación" />
-    <div class="card-body">
-      <h3>Tecnología y Computación</h3>
-      <p>Explora el mundo del desarrollo de software, redes y sistemas.</p>
+  <section class="grid">
+    <div class="card">
+      <img src="./imagenes/it.jpg" alt="Tecnologías de la Información" />
+      <div class="card-body">
+        <h3>Tecnologías de la Información</h3>
+        <p>Desarrolla habilidades en redes, sistemas operativos, servidores, ciberseguridad y más.</p>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1550751827-4e60a2f54b49?auto=format&fit=crop&w=800&q=80" alt="Ingeniería" />
-    <div class="card-body">
-      <h3>Ingeniería</h3>
-      <p>Aprende sobre diseño, análisis y construcción de infraestructuras.</p>
+    <div class="card">
+      <img src="./imagenes/desa.jpg" alt="Desarrollo de Software" />
+      <div class="card-body">
+        <h3>Desarrollo de Software</h3>
+        <p>Aprende a programar aplicaciones web, móviles y empresariales utilizando tecnologías modernas.</p>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Investigación" />
-    <div class="card-body">
-      <h3>Investigación</h3>
-      <p>Participa en proyectos que buscan innovación y desarrollo científico.</p>
+    <div class="card">
+      <img src="./imagenes/electro.webp" alt="Electromecánica" />
+      <div class="card-body">
+        <h3>Electromecánica</h3>
+        <p>Fusiona la mecánica, electrónica y automatización en entornos industriales de alta tecnología.</p>
+      </div>
     </div>
-  </div>
-</section>
+    <div class="card">
+      <img src="./imagenes/ana.jpg" alt="Automatización Industrial" />
+      <div class="card-body">
+        <h3>Automatización Industrial</h3>
+        <p>Controla procesos automáticos con sensores, PLCs, robots industriales y SCADA.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./imagenes/tele.jpg" alt="Telecomunicaciones" />
+      <div class="card-body">
+        <h3>Telecomunicaciones</h3>
+        <p>Diseña e implementa sistemas de comunicación moderna: fibra óptica, redes móviles y más.</p>
+      </div>
+    </div>
+  </section>
 
-<section class="prediction-section" id="prediction-section" style="display:none;">
-  <a href="#" class="prediction-button" id="prediction-link">Ir a la página de predicciones</a>
-</section>
+  <section class="prediction-section" id="prediction-section" style="display:none;">
+    <h2>Predicción de Desempeño en Prácticas</h2>
+    <p>Utiliza inteligencia artificial para conocer una predicción sobre tu posible rendimiento en las prácticas preprofesionales.</p>
+    <a href="./prediccion.html" class="prediction-button">Ir a Predicción</a>
+  </section>
 
-<footer>
-  &copy; 2025 ESFOT - Todos los derechos reservados.
-</footer>
-
-<!-- Botón para abrir chatbot -->
-<button id="chat-toggle-btn" title="Chatbot">💬</button>
-
-<!-- Chatbot container -->
-<div id="chatbot-container">
-  <div id="chatbot-header">Asistente ESFOT</div>
-  <div id="chatWindow"></div>
   <footer>
-    <input type="text" id="userInput" placeholder="Escribe tu mensaje..." autocomplete="off" />
-    <button class="send" id="sendBtn">Enviar</button>
+    © 2025 ESFOT - Escuela Politécnica Nacional | Quito - Ecuador
   </footer>
-</div>
 
-<!-- Modal Login -->
-<div class="modal" id="login-modal">
-  <div class="modal-content">
-    <span class="modal-close" id="login-close">&times;</span>
-    <h3>Iniciar Sesión</h3>
-    <div class="error-msg" id="login-error"></div>
-    <label for="login-email">Email</label>
-    <input type="email" id="login-email" placeholder="usuario@correo.com" />
-    <label for="login-password">Contraseña</label>
-    <input type="password" id="login-password" placeholder="******" />
-    <button id="login-submit">Ingresar</button>
-  </div>
-</div>
+  <!-- Aviso cuando no está logueado -->
+  <p id="login-warning" style="color:#a00; text-align:center; font-weight:bold; margin-top:2rem;">Debes iniciar sesión para acceder al chatbot y predicción.</p>
 
-<!-- Modal Registro -->
-<div class="modal" id="register-modal">
-  <div class="modal-content">
-    <span class="modal-close" id="register-close">&times;</span>
-    <h3>Registro</h3>
-    <div class="error-msg" id="register-error"></div>
-    <label for="register-email">Email</label>
-    <input type="email" id="register-email" placeholder="usuario@correo.com" />
-    <label for="register-password">Contraseña</label>
-    <input type="password" id="register-password" placeholder="******" />
-    <button id="register-submit">Registrar</button>
+  <!-- Chatbot -->
+  <button id="chat-toggle-btn" title="Abrir chat">🤖</button>
+  <div id="chatbot-container" role="main" aria-label="Chat con IA">
+    <div id="chatbot-header">ChatBot ESFOT</div>
+    <main id="chatWindow" tabindex="0" aria-live="polite" aria-relevant="additions"></main>
+    <footer>
+      <input type="text" id="inputMensaje" placeholder="Escribe tu mensaje..." aria-label="Mensaje para enviar" autocomplete="off" />
+      <button class="send" id="btnEnviar" aria-label="Enviar mensaje">Enviar</button>
+    </footer>
   </div>
-</div>
+
+  <!-- Modal Login -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <h2>Iniciar Sesión</h2>
+      <div id="login-error"></div>
+      <input type="email" id="email-input" placeholder="Correo electrónico" required />
+      <input type="password" id="password-input" placeholder="Contraseña" required />
+      <button id="login-submit">Ingresar</button>
+      <button class="close-btn" id="login-close">Cerrar</button>
+      <div id="register-link">¿No tienes cuenta? <span id="open-register" style="color:#0f4c81;cursor:pointer;">Regístrate aquí</span></div>
+    </div>
+  </div>
+
+  <!-- Modal Registro -->
+  <div id="register-modal" class="modal">
+    <div class="modal-content">
+      <h2>Registro</h2>
+      <div id="register-error"></div>
+      <div id="register-success"></div>
+      <input type="text" id="register-nombre" placeholder="Nombre" maxlength="50" required />
+      <input type="email" id="register-email" placeholder="Correo electrónico" required />
+      <input type="password" id="register-password" placeholder="Contraseña" required />
+      <button id="register-submit">Registrar</button>
+      <button class="close-btn" id="register-close">Cerrar</button>
+      <div id="login-link" style="margin-top:1rem;">¿Ya tienes cuenta? <span id="open-login" style="color:#0f4c81;cursor:pointer;">Inicia sesión aquí</span></div>
+    </div>
+  </div>
 
 <script>
-  // Manejo de estado de usuario (localStorage simulado)
-  const navMenu = document.getElementById('nav-menu');
-  const loginLink = document.getElementById('login-link');
-  const registerLink = document.getElementById('register-link');
-  const predictionSection = document.getElementById('prediction-section');
-  const chatToggleBtn = document.getElementById('chat-toggle-btn');
-  const chatbotContainer = document.getElementById('chatbot-container');
+  const BASE_URL = "https://backia.up.railway.app/api/auth";
 
-  const loginModal = document.getElementById('login-modal');
-  const loginClose = document.getElementById('login-close');
-  const loginSubmit = document.getElementById('login-submit');
-  const loginEmail = document.getElementById('login-email');
-  const loginPassword = document.getElementById('login-password');
-  const loginError = document.getElementById('login-error');
+  // Elementos
+  const loginBtn = document.getElementById("login-btn");
+  const nav = loginBtn.parentElement;
+  const predictionSection = document.getElementById("prediction-section");
+  const chatToggleBtn = document.getElementById("chat-toggle-btn");
+  const chatbotContainer = document.getElementById("chatbot-container");
+  const loginWarning = document.getElementById("login-warning");
 
-  const registerModal = document.getElementById('register-modal');
-  const registerClose = document.getElementById('register-close');
-  const registerSubmit = document.getElementById('register-submit');
-  const registerEmail = document.getElementById('register-email');
-  const registerPassword = document.getElementById('register-password');
-  const registerError = document.getElementById('register-error');
+  // Login Modal Elements
+  const loginModal = document.getElementById("login-modal");
+  const loginCloseBtn = document.getElementById("login-close");
+  const loginSubmitBtn = document.getElementById("login-submit");
+  const loginErrorDiv = document.getElementById("login-error");
+  const emailInput = document.getElementById("email-input");
+  const passwordInput = document.getElementById("password-input");
+  const openRegisterLink = document.getElementById("open-register");
 
+  // Register Modal Elements
+  const registerModal = document.getElementById("register-modal");
+  const registerCloseBtn = document.getElementById("register-close");
+  const registerSubmitBtn = document.getElementById("register-submit");
+  const registerErrorDiv = document.getElementById("register-error");
+  const registerSuccessDiv = document.getElementById("register-success");
+  const registerNombreInput = document.getElementById("register-nombre");
+  const registerEmailInput = document.getElementById("register-email");
+  const registerPasswordInput = document.getElementById("register-password");
+  const openLoginLink = document.getElementById("open-login");
+
+  // Chatbot elementos
   const chatWindow = document.getElementById('chatWindow');
-  const userInput = document.getElementById('userInput');
-  const sendBtn = document.getElementById('sendBtn');
+  const inputMensaje = document.getElementById('inputMensaje');
+  const btnEnviar = document.getElementById('btnEnviar');
 
-  let currentUser = localStorage.getItem('esfotUser') || null;
-
-  // Función para mostrar usuario logueado en menú
-  function updateUIForUser() {
-    if(currentUser) {
-      navMenu.innerHTML = `
-        <span>Bienvenido, ${currentUser}</span>
-        <a href="#" id="logout-btn" class="logout-btn">Cerrar sesión</a>
-      `;
-      predictionSection.style.display = 'block';
-      chatToggleBtn.style.display = 'block';
-
-      document.getElementById('logout-btn').addEventListener('click', () => {
-        logoutUser();
-      });
-    } else {
-      navMenu.innerHTML = `
-        <a href="#" id="login-link">Login</a>
-        <a href="#" id="register-link">Registro</a>
-      `;
-      predictionSection.style.display = 'none';
-      chatToggleBtn.style.display = 'none';
-
-      // Re-attach listeners
-      document.getElementById('login-link').addEventListener('click', (e) => {
-        e.preventDefault();
-        openLoginModal();
-      });
-      document.getElementById('register-link').addEventListener('click', (e) => {
-        e.preventDefault();
-        openRegisterModal();
-      });
-    }
-  }
-
-  function logoutUser() {
-    currentUser = null;
-    localStorage.removeItem('esfotUser');
-    updateUIForUser();
-    chatbotContainer.style.display = 'none';
-  }
-
-  function openLoginModal() {
-    loginError.textContent = '';
-    loginEmail.value = '';
-    loginPassword.value = '';
-    loginModal.classList.add('active');
-  }
-
-  function openRegisterModal() {
-    registerError.textContent = '';
-    registerEmail.value = '';
-    registerPassword.value = '';
-    registerModal.classList.add('active');
-  }
-
-  loginLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    openLoginModal();
-  });
-
-  registerLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    openRegisterModal();
-  });
-
-  loginClose.addEventListener('click', () => {
-    loginModal.classList.remove('active');
-  });
-  registerClose.addEventListener('click', () => {
-    registerModal.classList.remove('active');
-  });
-
-  // Login Submit
-  loginSubmit.addEventListener('click', () => {
-    const email = loginEmail.value.trim();
-    const pass = loginPassword.value.trim();
-
-    // Validar simple
-    if(!email || !pass) {
-      loginError.textContent = 'Por favor complete todos los campos.';
-      return;
-    }
-
-    // Simulación de autenticación
-    // En un sistema real, aquí llamarías a backend API para validar usuario
-    // Para demo, guardamos en localStorage y aceptamos cualquier usuario registrado
-
-    let registeredUsers = JSON.parse(localStorage.getItem('esfotRegisteredUsers') || '{}');
-    if(registeredUsers[email] && registeredUsers[email] === pass) {
-      currentUser = email;
-      localStorage.setItem('esfotUser', currentUser);
-      loginModal.classList.remove('active');
-      updateUIForUser();
-    } else {
-      loginError.textContent = 'Credenciales incorrectas.';
-    }
-  });
-
-  // Registro Submit
-  registerSubmit.addEventListener('click', () => {
-    const email = registerEmail.value.trim();
-    const pass = registerPassword.value.trim();
-
-    if(!email || !pass) {
-      registerError.textContent = 'Por favor complete todos los campos.';
-      return;
-    }
-
-    // Simulación simple de registro
-    let registeredUsers = JSON.parse(localStorage.getItem('esfotRegisteredUsers') || '{}');
-    if(registeredUsers[email]) {
-      registerError.textContent = 'El usuario ya está registrado.';
-      return;
-    }
-
-    registeredUsers[email] = pass;
-    localStorage.setItem('esfotRegisteredUsers', JSON.stringify(registeredUsers));
-    currentUser = email;
-    localStorage.setItem('esfotUser', currentUser);
-    registerModal.classList.remove('active');
-    updateUIForUser();
-  });
-
-  // Toggle chatbot
+  // Mostrar/Ocultar Chatbot
   chatToggleBtn.addEventListener('click', () => {
-    if(chatbotContainer.style.display === 'flex') {
-      chatbotContainer.style.display = 'none';
-    } else {
-      chatbotContainer.style.display = 'flex';
-      userInput.focus();
-    }
+    chatbotContainer.style.display = chatbotContainer.style.display === 'flex' ? 'none' : 'flex';
   });
 
-  // Enviar mensaje
-  sendBtn.addEventListener('click', sendMessage);
-  userInput.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter') sendMessage();
-  });
-
-  function appendMessage(text, sender) {
+  // Agregar mensaje en chat
+  function agregarMensaje(texto, clase) {
     const msgDiv = document.createElement('div');
-    msgDiv.classList.add('message', sender);
-    msgDiv.textContent = text;
+    msgDiv.classList.add('message', clase);
+    msgDiv.textContent = texto;
     chatWindow.appendChild(msgDiv);
     chatWindow.scrollTop = chatWindow.scrollHeight;
   }
 
-  async function sendMessage() {
-    const message = userInput.value.trim();
-    if(!message) return;
-    appendMessage(message, 'user');
-    userInput.value = '';
-    appendMessage('Escribiendo...', 'ia');
-
-    // Simulación de respuesta IA (puedes cambiar aquí la integración)
-    // Simulamos retardo y respuesta
-
-    // Eliminar el "Escribiendo..."
-    const typingMsg = chatWindow.querySelector('.message.ia:last-child');
-    if(typingMsg) chatWindow.removeChild(typingMsg);
-
-    // Respuesta simple
-    const response = await getChatbotResponse(message);
-    appendMessage(response, 'ia');
+  function mostrarError(texto) {
+    agregarMensaje("Error: " + texto, "ia");
   }
 
-  // Simulación simple de IA
-  async function getChatbotResponse(input) {
-    input = input.toLowerCase();
+  async function enviarMensaje() {
+    const texto = inputMensaje.value.trim();
+    if (!texto) return;
 
-    if(input.includes('hola') || input.includes('buenos días') || input.includes('buenas tardes')) {
-      return '¡Hola! ¿En qué puedo ayudarte hoy?';
+    agregarMensaje(texto, 'user');
+    inputMensaje.value = '';
+    inputMensaje.disabled = true;
+    btnEnviar.disabled = true;
+
+    try {
+      const res = await fetch(`${BASE_URL}/buscar`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: texto }),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+
+      const data = await res.json();
+      const respuesta = data.respuesta || "No se encontró respuesta.";
+      agregarMensaje(respuesta, 'ia');
+    } catch (error) {
+      mostrarError(error.message);
+    } finally {
+      inputMensaje.disabled = false;
+      btnEnviar.disabled = false;
+      inputMensaje.focus();
     }
-    if(input.includes('carrera') || input.includes('carreras')) {
-      return 'En ESFOT ofrecemos diversas carreras como Tecnología, Ingeniería e Investigación.';
-    }
-    if(input.includes('horarios')) {
-      return 'Los horarios varían según la carrera, pero normalmente las clases son de lunes a viernes en la mañana y tarde.';
-    }
-    if(input.includes('contacto')) {
-      return 'Puedes contactarnos al correo info@esfot.edu o al teléfono (593) 123-4567.';
-    }
-    return 'Lo siento, no entendí tu pregunta. ¿Puedes reformularla?';
   }
 
-  // Inicializar UI según usuario logueado
-  updateUIForUser();
+  btnEnviar.addEventListener('click', enviarMensaje);
+  inputMensaje.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      enviarMensaje();
+    }
+  });
 
+  // Abrir modal login
+  loginBtn.addEventListener("click", e => {
+    e.preventDefault();
+    loginErrorDiv.textContent = "";
+    emailInput.value = "";
+    passwordInput.value = "";
+    loginModal.classList.add("active");
+  });
+
+  // Cerrar modal login
+  loginCloseBtn.addEventListener("click", () => {
+    loginModal.classList.remove("active");
+  });
+
+  // Abrir modal registro desde login
+  openRegisterLink.addEventListener("click", () => {
+    loginModal.classList.remove("active");
+    registerErrorDiv.textContent = "";
+    registerSuccessDiv.textContent = "";
+    registerNombreInput.value = "";
+    registerEmailInput.value = "";
+    registerPasswordInput.value = "";
+    registerModal.classList.add("active");
+  });
+
+  // Cerrar modal registro
+  registerCloseBtn.addEventListener("click", () => {
+    registerModal.classList.remove("active");
+  });
+
+  // Abrir modal login desde registro
+  openLoginLink.addEventListener("click", () => {
+    registerModal.classList.remove("active");
+    loginErrorDiv.textContent = "";
+    emailInput.value = "";
+    passwordInput.value = "";
+    loginModal.classList.add("active");
+  });
+
+  // Función para actualizar UI después del login
+  function actualizarUI(nombre) {
+    // Cambiar botón iniciar sesión por nombre y logout
+    loginBtn.style.display = "none";
+
+    // Limpiar nav para evitar duplicados
+    [...nav.querySelectorAll('span, a.logout-btn')].forEach(el => el.remove());
+
+    const nombreSpan = document.createElement("span");
+    nombreSpan.textContent = nombre;
+    nav.appendChild(nombreSpan);
+
+    const logoutBtn = document.createElement("a");
+    logoutBtn.textContent = "Cerrar sesión";
+    logoutBtn.href = "#";
+    logoutBtn.classList.add("logout-btn");
+    nav.appendChild(logoutBtn);
+
+    logoutBtn.addEventListener("click", e => {
+      e.preventDefault();
+      localStorage.clear();
+      location.reload();
+    });
+
+    // Mostrar chatbot y predicción
+    predictionSection.style.display = "block";
+    chatToggleBtn.style.display = "block";
+    chatbotContainer.style.display = "none"; // oculto inicialmente
+
+    // Ocultar aviso
+    loginWarning.style.display = "none";
+  }
+
+  // Revisar sesión al cargar página
+  window.addEventListener("load", () => {
+    const token = localStorage.getItem("token");
+    const nombre = localStorage.getItem("nombre");
+
+    if (token && nombre) {
+      actualizarUI(nombre);
+      agregarMensaje("Hola, soy el ChatBot de la ESFOT. ¿En qué puedo ayudarte hoy?", "ia");
+    } else {
+      predictionSection.style.display = "none";
+      chatToggleBtn.style.display = "none";
+      chatbotContainer.style.display = "none";
+      loginWarning.style.display = "block";
+    }
+  });
+
+  // Enviar login al backend
+  loginSubmitBtn.addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    if (!email || !password) {
+      loginErrorDiv.textContent = "Por favor completa todos los campos.";
+      return;
+    }
+
+    loginErrorDiv.textContent = "";
+    loginSubmitBtn.disabled = true;
+    loginSubmitBtn.textContent = "Ingresando...";
+
+    try {
+      const res = await fetch(`${BASE_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Error al iniciar sesión");
+      }
+
+      const data = await res.json();
+
+      // Guardar token y nombre en localStorage
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("nombre", data.nombre || "Usuario");
+
+      loginModal.classList.remove("active");
+      actualizarUI(data.nombre || "Usuario");
+      agregarMensaje("Hola, soy el ChatBot de la ESFOT. ¿En qué puedo ayudarte hoy?", "ia");
+    } catch (error) {
+      loginErrorDiv.textContent = error.message;
+    } finally {
+      loginSubmitBtn.disabled = false;
+      loginSubmitBtn.textContent = "Ingresar";
+    }
+  });
+
+  // Enviar registro al backend
+  registerSubmitBtn.addEventListener("click", async () => {
+    const nombre = registerNombreInput.value.trim();
+    const email = registerEmailInput.value.trim();
+    const password = registerPasswordInput.value.trim();
+
+    registerErrorDiv.textContent = "";
+    registerSuccessDiv.textContent = "";
+
+    if (!nombre || !email || !password) {
+      registerErrorDiv.textContent = "Por favor completa todos los campos.";
+      return;
+    }
+
+    // Validar email simple
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      registerErrorDiv.textContent = "Correo electrónico no válido.";
+      return;
+    }
+
+    registerSubmitBtn.disabled = true;
+    registerSubmitBtn.textContent = "Registrando...";
+
+    try {
+      const res = await fetch(`${BASE_URL}/registro`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, email, password }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Error en el registro");
+      }
+
+      registerSuccessDiv.textContent = "Registro exitoso. Ya puedes iniciar sesión.";
+      // Opcional: Limpiar campos
+      registerNombreInput.value = "";
+      registerEmailInput.value = "";
+      registerPasswordInput.value = "";
+
+    } catch (error) {
+      registerErrorDiv.textContent = error.message;
+    } finally {
+      registerSubmitBtn.disabled = false;
+      registerSubmitBtn.textContent = "Registrar";
+    }
+  });
 </script>
-
 </body>
 </html>
